@@ -1,0 +1,56 @@
+<template name="video">
+    <div class="clear"></div>
+	<article class="col-xs-12 col-sm-8">
+        <hgroup id="heading">
+        	<h1>Video & Graphic Design</h1>
+            <h2>Adobe Premiere Pro, After Effects, Photoshop, & Illustrator</h2>
+        </hgroup>
+        <p>I'm self taught when it comes to video and motion graphics.  But it doesn't hurt that my father is a professional photographer.  Always eager to learn something new I've spent countless hours reading, listening to those with experience, and learning from my mistakes and successes.  Fortunately, I have bandmates who are more than happy to let me handle online video content.</p>
+        <h3>Skills</h3>
+        <ul>
+        	<li>Adobe Premiere</li>
+            <li>Adobe After Effects</li>
+            <li>Digital SLR Cameras</li>
+            <li>Basic studio lighting</li>
+        </ul>
+    </article>
+    <article class="col-xs-12 col-sm-4">
+        <img style="width: 100%;" src="/images/EnergyDrink_Final.jpg"/>
+    </article>
+    <section id="videos" class="col-xs-12">
+    	<hr/>
+        <h3>Band Promotional Videos</h3>
+        <p>I made these with a Nikon D5100, Premier, and After Effects.</p>
+    	<div class="col-xs-12 col-sm-4">
+            <h3>Interview with live shots</h3>
+			<iframe width="100%" class="video" src="//www.youtube.com/embed/4xq0sogkosY" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <h3>General Promo with iPhone animation</h3>
+			<iframe width="100%" class="video" src="//www.youtube.com/embed/DaC0qcpbB5s" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <h3>Music Festival Promo</h3>
+			<iframe width="100%" class="video" src="//www.youtube.com/embed/eAIz127C5f0" frameborder="0" allowfullscreen></iframe>
+        </div><div class="col-xs-12 col-sm-4">
+            <h3>Small Venue Promo</h3>
+			<iframe width="100%" class="video" src="//www.youtube.com/embed/cQIjx7DaO3M" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+    
+    <script>
+		$(".video").each(function() {
+			$width = $(this).width();
+			$(this).css({height: $width*.75});
+		});
+		
+		$(window).resize(function() {
+			$(".video").each(function() {
+				$width = $(this).width();
+				$(this).css({height: $width*.75});
+			});
+		});
+		
+		$("body").removeClass().addClass("video");
+	</script>
+</template>

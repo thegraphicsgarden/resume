@@ -1,0 +1,191 @@
+<template name="homePage">
+	<section id="homeNav" class="col-sm-12 hidden-xs centered">
+		<div id="canvas-container">
+			<svg width="700" height="500">
+				<circle cx="342" cy="240" r="210" stroke="black" stroke-width="1" fill="none">
+				</circle>
+				<rect x="160" y="80" width="370" height="370" fill="none" stroke-width="1">
+					<animate attributeName="x" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="220" to="160" />
+             		<animate attributeName="y" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="60" to="80" />
+				</rect>
+
+				<line x1="220" y1="50" x2="160" y2="15">
+
+				</line> 
+				<line x1="160" y1="15" x2="80" y2="15" />
+
+				<line x1="465" y1="55" x2="520" y2="15" /> 
+				<line x1="520" y1="15" x2="610" y2="15" />
+
+   			    <line x1="520" y1="250" x2="550" y2="305" /> 
+				<line x1="550" y1="305" x2="570" y2="305" />
+
+				<line x1="180" y1="195" x2="140" y2="265" /> 
+				<line x1="140" y1="265" x2="125" y2="265" />
+
+			    <image id="shadow" xlink:href="/images/shadow.png" x="130" y="270" height="400px" width="400px">
+			    	<animate attributeName="y" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="290" to="270" />
+			    </image>
+			    <image id="jason" xlink:href="/images/jason.png" x="130" y="50" height="400px" width="400px">
+			    	<animate attributeName="y" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="0" to="50" />
+			    </image>
+			</svg>
+			<canvas id="canvas1" width="700" height="500" style="display: none;">
+				Your browser does not support canvas - go get Chrome!
+			</canvas>
+			<article id="director">
+				<a href="{{pathFor 'director'}}">Director</a>
+				<p>Administrative Director, Education Program Coordinator</p>
+			</article>
+			<article id="video">
+				<a href="{{pathFor 'video'}}">Video/Print</a>
+				<p>Adobe Premiere, After Effects, Photoshop, Illustrator, Lightroom</p>
+			</article>
+			<article id="web">
+				<a href="{{pathFor 'webDevDesign'}}">Web Dev/Design</a>
+				<p>HTML5, CSS3, Jquery, MeteorJS, PHP, MySQL, Bootstrap, Foundation, SASS, LESS</p>
+			</article>
+			<article id="music">
+				<a href="{{pathFor 'music'}}">Music</a>
+				<p>World Travelled Professional/Recording Guitarist: MTV, VH1, BBC</p>
+			</article>
+			<article id="education">
+				<a href="{{pathFor 'education'}}">Education</a>
+				<p>Stanford University 2006<br/>BS, Electrical Engineering</p>
+			</article>
+			<div class="clear"></div>
+		</div>
+	</section>
+
+	<section id="small-homeNav" class="visible-xs col-xs-12 hidden-sm centered">
+		<div class="col-xs-10 col-xs-offset-1">
+			<img id="small-home" src="/images/jason.png" />
+			<img id="small-home" src="/images/shadow.png" />
+		</div>
+		<div class="col-xs-6">
+			<article id="director">
+				<a href="{{pathFor 'director'}}">Director</a>
+				<p>Administrative Director, Education Program Coordinator, and Team Player</p>
+			</article>
+		</div>
+		<div class="col-xs-6">
+			<article id="web">
+				<a href="{{pathFor 'webDevDesign'}}">Web Dev/Design</a>
+				<p>HTML5, CSS3, Jquery, MeteorJS, PHP, MySQL, Bootstrap, Foundation, SASS, LESS</p>
+			</article>
+		</div>
+		<div class="col-xs-6">            	
+			<article id="education">
+				<a href="{{pathFor 'education'}}">Education</a>
+				<p>Stanford University 2006<br/>BS, Electrical Engineering</p>
+			</article>
+		</div>
+		<div class="col-xs-6"> 
+			<article id="music">
+				<a href="{{pathFor 'music'}}">Music</a>
+				<p>World Travelled Professional/Recording Guitarist: MTV, VH1, BBC</p>
+			</article>  
+		</div>
+		<div class="col-xs-6">        	
+			<article id="video">
+				<a href="{{pathFor 'video'}}">Video/Print</a>
+				<p>Adobe Premiere, After Effects, Photoshop, Illustrator, Lightroom</p>
+			</article>
+		</div>
+	</section>
+
+	<script>
+	$("body").removeClass();
+
+	var can = document.getElementById('canvas1');
+	var context = can.getContext('2d');
+	var requestAnimationFrame = window.requestAnimationFrame || 
+                            window.mozRequestAnimationFrame || 
+                            window.webkitRequestAnimationFrame || 
+                            window.msRequestAnimationFrame;
+
+	var img1 = new Image();
+	img1.onload = function() {
+		context.drawImage(img1, 130, 50);
+	}
+			img1.src = "/images/jason.png"; //transparent png
+			
+			
+			context.lineWidth = .05;
+			context.strokeStyle = '#999';
+			
+			//top left (video)
+			function drawTopLeft() {
+				context.beginPath();
+				context.moveTo(220, 50);
+				context.lineTo(160, 15);
+				context.lineTo(80, 15);
+				context.stroke();
+				//requestAnimationFrame(drawTopLeft);
+			}
+			drawTopLeft();
+			
+			//top right (director)
+			function drawTopRight() {
+				context.moveTo(465, 55);
+				context.lineTo(520, 15);
+				context.lineTo(610, 15);
+				context.stroke();
+				//requestAnimationFrame(drawTopRight);
+			}
+			drawTopRight();
+
+			context.lineWidth = .3;
+			//bottom right (music)
+			function drawBottomRight() {
+				context.moveTo(520, 250);
+				context.lineTo(550, 305);
+				context.lineTo(570, 305);
+				context.stroke();
+				//requestAnimationFrame(drawBottomRight);
+			}
+			drawBottomRight();
+
+			//bottom left (web)
+			function drawBottomLeft() {
+				context.moveTo(180, 190);
+				context.lineTo(140, 265);
+				context.lineTo(125, 265);
+				context.stroke();
+				//requestAnimationFrame(drawBottomLeft);
+			}
+			drawBottomLeft();
+
+			context.lineWidth = .2;
+			//circle
+			function drawCircle() {
+				context.moveTo(550, 240);
+				context.arc(340, 240, 210, 0, 2 * Math.PI, false);
+				context.stroke();
+				//requestAnimationFrame(drawCircle);
+			}
+			drawCircle();
+
+			context.lineWidth = .4;
+			//square
+			function drawSquare(x,y) {
+				context.moveTo(x,y);
+				x += .5;
+				context.lineTo(x,y);
+				context.stroke();
+				/*context.moveTo(335, 450);	//feet
+				context.lineTo(155, 450); 	//bottom left
+				context.lineTo(155, 80);  	//top left
+				context.lineTo(525, 80);  	//top right
+				context.lineTo(525, 450);	//bottom right
+				context.lineTo(335, 450);	//feet
+				context.stroke();*/
+				if(x > 400) return false;
+				console.log(x);
+				requestAnimationFrame(drawSquare(x,y));
+			}
+			//drawSquare(335, 450);
+
+			
+			</script>
+		</template>

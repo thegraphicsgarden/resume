@@ -1,0 +1,39 @@
+<template name="layout">
+
+        <nav id="primary-nav-xs" class="col-xs-12" style="display: none;"> 
+            <ul>
+                <li><a href="{{pathFor 'director'}}">Director</a></li>
+                <li><a href="{{pathFor 'webDevDesign'}}">Web</a></li>
+                <li><a href="{{pathFor 'music'}}">Music</a></li>
+                <li><a href="{{pathFor 'video'}}">Video/Print</a></li>
+                <li><a href="{{pathFor 'education'}}">Education</a></li>
+                <li><a href="{{pathFor 'contact'}}">Contact</a></li>
+                <li><a href="">Close</a></li>
+            </ul>
+        </nav>
+	<div class="container">
+        <hgroup id="title" class="col-xs-12 col-sm-3">
+            <figure id="collapsed-menu-btn" class="visible-xs">
+                <p><a href="" id="collapsed-menu">Menu</a></p>
+            </figure>
+            <h1><a id="logo" href="{{pathFor 'homePage'}}"><span>Creative</span> Director</a></h1>
+            <h2>Jason Bryant {{activePage}}</h2>
+        </hgroup>
+    	<nav id="primary-nav" class="col-xs-12 hidden-xs col-sm-9">
+            <ul>
+                <li><a href="{{pathFor 'director'}}">Director</a></li>
+                <li><a href="{{pathFor 'webDevDesign'}}">Web</a></li>
+                <li><a href="{{pathFor 'music'}}">Music</a></li>
+                <li><a href="{{pathFor 'video'}}">Video/Print</a></li>
+                <li><a href="{{pathFor 'education'}}">Education</a></li>
+                <li><a href="{{pathFor 'contact'}}">Contact</a></li>
+            </ul>
+        </nav>
+        
+        {{> yield }}
+        
+        <!--<footer class="col-xs-12 centered">
+        
+        </footer>-->
+	</div><!--container-->
+</template>

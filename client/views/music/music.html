@@ -1,0 +1,59 @@
+<template name="music">
+	<section class="col-xs-12 col-sm-12">
+    	<article class="col-xs-12 col-sm-8" style="padding: 0;">
+            <hgroup id="heading">
+                <h1>MUSIC</h1>
+                <h2>Professional Touring Guitarist from 2005 to 2009</h2>
+            </hgroup>
+            <p>Being the only American musician in a Marley band was a high pressure experience that helped me to acquire new skills quickly and perform at a high standard at an early age.</p>
+            <p>During my time with the Marley family I appeared on a track for Julian Marley's album (<a href="https://itunes.apple.com/us/album/awake/id316518699" rel="nofollow" target="_blank">Awake</a>), recorded all but one song on an album entitled <a href="https://itunes.apple.com/us/album/superstar/id267867281" rel="nofollow" target="_blank">Superstar</a> that was produced by Damian, and assisted in the studio with a track on the Grammy Award winning album Welcome to Jamrock.</p>
+            <p>I got to share the stage with Stephen, Damian, Julian, Kymani, and Rohan Marley among many others: Ben Harper, Sean Paul, Bounty Killer, Cocoa Tea, Bunny Wailer...</p>
+                
+            <p>Moreover, I completed my degree while on the road touring as Damian Marley's guitarist</p>
+            
+            <h3>Skills</h3>
+            <ul>
+            	<li>Extensive Touring and Recording Experience</li>
+            	<li>ProTools, Logic, Reason</li>
+                <li>Strings: Guitar, Bass, Vihuela, Cavaquinho</li>
+                <li>Other Instruments: Keyboards, Trumpet, Drums</li>
+            </ul>
+        </article>
+        <section id="snapshots" class="col-xs-12 col-sm-4">
+        	<div class="clear forty"></div>
+            <img src="/images/santana.jpg" />
+        </section>
+    </section>
+    <div class="clear twenty"></div>
+    <section id="videos" class="col-xs-12">
+    	<hr/>
+    	<div class="col-xs-12 col-sm-4">
+            <h3>Austin City Limits taping for PBS</h3>
+            <iframe class="video" width="100%" src="//www.youtube.com/embed/5oSjMu5tgDE" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <h3>Jimmy Kimmel Live Taping</h3>
+            <iframe class="video" width="100%" src="//www.youtube.com/embed/AJaVRdPB3QY" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+    	<h3>VH1 taping in New York City</h3>
+    	<iframe class="video" width="100%" src="//www.youtube.com/embed/VJslFrqJ5R0" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+    
+    <script>
+		$(".video").each(function() {
+			$width = $(this).width();
+			$(this).css({height: $width*.75});
+		});
+		
+		$(window).resize(function() {
+			$(".video").each(function() {
+				$width = $(this).width();
+				$(this).css({height: $width*.75});
+			});
+		});
+		
+		$("body").removeClass().addClass("music");
+	</script>
+</template>

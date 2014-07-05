@@ -1,0 +1,250 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Condensed);
+/* Variables*/
+/* Mixins */
+/**/
+@font-face {
+  font-family: 'League Gothic Regular';
+  src: url("/fonts/leaguegothic-regular-webfont.woff") format("woff"), url("/fonts/leaguegothic-regular-webfont.ttf") format("truetype");
+  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */ }
+
+/**/
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes NfadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
+
+/**/
+body {
+  /*@include radialBkg;*/
+  height: 100%;
+  /*&.music {
+  	background: url('/images/cavaquinho.jpg');
+  	background-repeat: no-repeat;
+  }
+  &.director {
+  	background: url('/images/director.jpg');
+  	background-repeat: no-repeat;
+  }
+  &.video {
+  	background: url('/images/video.jpg');
+  	background-repeat: no-repeat;
+  	background-position: 100% 0;
+  }
+  &.calculus {
+  	background: url('/images/calculus.jpg');
+  	background-repeat: no-repeat;
+  	background-position: 37px 37px;
+  }
+  &.web-dev-design {
+  	background: url('/images/web.jpg');
+  	background-repeat: no-repeat;
+  	background-position: 100% -100px;
+  }*/ }
+
+/**/
+a:hover {
+  text-decoration: none !important;
+  color: #ffc000 !important; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'League Gothic Regular', 'Ubuntu Condensed', sans-serif !important; }
+
+.centered {
+  text-align: center; }
+
+img {
+  width: 100%; }
+
+.clear {
+  clear: both; }
+  .clear.twenty {
+    height: 20px; }
+  .clear.forty {
+    height: 40px; }
+  .clear.hundred {
+    height: 100px; }
+
+/**/
+#title {
+  margin-bottom: 20px;
+  position: relative; }
+  #title h1 {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: -0px;
+    font-size: 2.5em;
+    line-height: 80%; }
+    #title h1 span {
+      color: #ffc000; }
+    #title h1:hover {
+      text-decoration: none !important;
+      cursor: pointer; }
+  #title h2 {
+    margin: 0 auto;
+    font-size: 1.1em;
+    font-weight: 200;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important; }
+  #title #collapsed-menu-btn {
+    position: absolute;
+    right: 20px;
+    top: 23px; }
+
+#primary-nav ul {
+  list-style: none;
+  padding-top: 21px;
+  padding-left: 0;
+  text-align: right; }
+  #primary-nav ul li {
+    display: inline-block;
+    margin: auto 15px; }
+    #primary-nav ul li a {
+      color: #333333;
+      font-weight: 200;
+      font-size: 1.1em; }
+      #primary-nav ul li a.active {
+        color: #ffc000; }
+
+#primary-nav-xs {
+  position: absolute;
+  background: whitesmoke;
+  padding-left: 0;
+  z-index: 9;
+  padding-top: 10px;
+  background: #428bca; }
+  #primary-nav-xs ul {
+    list-style: none;
+    padding-left: 20px; }
+    #primary-nav-xs ul li {
+      padding: 10px 0; }
+      #primary-nav-xs ul li:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+      #primary-nav-xs ul li a {
+        color: white;
+        font-weight: 200;
+        font-family: 1.3em; }
+
+#homeNav img {
+  width: 100%;
+  max-width: 400px; }
+#homeNav #jason, #homeNav #shadow {
+  -webkit-animation: fadeIn 5s;
+  /* Safari 4+ */
+  -moz-animation: fadeIn 5s;
+  /* Fx 5+ */
+  -o-animation: fadeIn 5s;
+  /* Opera 12+ */
+  animation: fadeIn 5s;
+  /* IE 10+ */ }
+#homeNav circle, #homeNav rect {
+  stroke: rgba(0, 0, 0, 0.1); }
+#homeNav circle {
+  	        /*
+  		  stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 5s linear forwards;*/ }
+#homeNav line {
+  stroke: rgba(0, 0, 0, 0.2); }
+#homeNav #canvas-container {
+  position: relative;
+  width: 700px;
+  margin: 0 auto; }
+  #homeNav #canvas-container #director, #homeNav #canvas-container #video, #homeNav #canvas-container #web, #homeNav #canvas-container #music, #homeNav #canvas-container #education {
+    position: absolute;
+    max-width: 200px;
+    font-size: .8em;
+    text-align: left;
+    -webkit-animation: fadeIn 2s;
+    /* Safari 4+ */
+    -moz-animation: fadeIn 2s;
+    /* Fx 5+ */
+    -o-animation: fadeIn 2s;
+    /* Opera 12+ */
+    animation: fadeIn 2s;
+    /* IE 10+ */ }
+    #homeNav #canvas-container #director a, #homeNav #canvas-container #video a, #homeNav #canvas-container #web a, #homeNav #canvas-container #music a, #homeNav #canvas-container #education a {
+      font-size: 1.3em; }
+  #homeNav #canvas-container #director {
+    right: 20px;
+    top: 3px;
+    text-align: right; }
+  #homeNav #canvas-container #video {
+    left: 0;
+    top: 3px; }
+  #homeNav #canvas-container #web {
+    left: 0;
+    top: 252px; }
+  #homeNav #canvas-container #music {
+    right: 80px;
+    top: 293px;
+    text-align: right; }
+  #homeNav #canvas-container #education {
+    text-align: center;
+    left: 275px;
+    bottom: -40px; }
+  #homeNav #canvas-container #canvas1 {
+    background: url("/images/shadow.png");
+    background-repeat: no-repeat;
+    background-position: 46% 95%; }
+
+#small-homeNav .col-xs-6 {
+  text-align: left;
+  margin-bottom: 20px; }
+#small-homeNav img#small-home {
+  max-width: 300px; }
+
+#heading h1 {
+  margin: 0 auto;
+  color: #ffc000;
+  font-size: 3em; }
+#heading h2 {
+  margin: 0 auto 20px auto;
+  line-height: 100%;
+  font-size: 1.3em;
+  font-weight: 200;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important; }
+
+#snapshots img {
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3); }
+#snapshots img:nth-child(odd) {
+  transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
+  /* IE 9 */
+  -webkit-transform: rotate(7deg);
+  /* Opera, Chrome, and Safari */ }
+#snapshots img:nth-child(even) {
+  transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-2deg);
+  /* Opera, Chrome, and Safari */ }
+
+footer {
+  height: 100px; }
